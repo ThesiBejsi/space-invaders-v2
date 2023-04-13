@@ -19,15 +19,15 @@ input.onButtonPressed(Button.B, function () {
     player.move(1)
     music.playSoundEffect(music.createSoundEffect(WaveShape.Square, 200, 1, 255, 0, 100, SoundExpressionEffect.None, InterpolationCurve.Curve), SoundExpressionPlayMode.UntilDone)
 })
-// debug stuff
+// turn of sound
+// 
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
-    game.addScore(10)
+    music.setVolume(0)
 })
 let speed = 0
 let Enemy: game.LedSprite = null
 let shoot: game.LedSprite = null
 let player: game.LedSprite = null
-music.playTone(196, music.beat(BeatFraction.Double))
 player = game.createSprite(2, 4)
 basic.forever(function () {
     Enemy = game.createSprite(randint(-1, 4), randint(0, 1))
